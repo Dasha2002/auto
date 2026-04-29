@@ -310,3 +310,93 @@ document.addEventListener('DOMContentLoaded', () => {
   showStep(1);
   
 });
+
+// свайпер hero
+
+document.addEventListener('DOMContentLoaded', function() {
+    const swiperContainer = document.querySelector('.swiper-container');
+    if (!swiperContainer) return;
+    
+    const wrapper = swiperContainer.querySelector('.swiper-wrapper');
+    const slides = swiperContainer.querySelectorAll('.swiper-slide');
+    const prevBtn = swiperContainer.querySelector('.swiper-button-prev');
+    const nextBtn = swiperContainer.querySelector('.swiper-button-next');
+    const pagination = swiperContainer.querySelector('.swiper-pagination');
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    // Create pagination bullets
+    slides.forEach((_, index) => {
+        const bullet = document.createElement('button');
+        bullet.className = 'swiper-pagination-bullet' + (index === 0 ? ' swiper-pagination-bullet-active' : '');
+        bullet.setAttribute('aria-label', 'Перейти к слайду ' + (index + 1));
+        bullet.addEventListener('click', () => goToSlide(index));
+        pagination.appendChild(bullet);
+    });
+    
+    const bullets = pagination.querySelectorAll('.swiper-pagination-bullet');
+    
+    // Update slides position
+    function updateSlides() {
+        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update bullets
+        bullets.forEach((bullet, index) => {
+            bullet.classList.toggle('swiper-pagination-bullet-active', index === currentIndex);
+        });
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentIndex = index;
+        updateSlides();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        goToSlide(currentIndex - 1);
+    }
+    
+    // Event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Keyboard navigation
+    swiperContainer.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // Touch/Swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    swiperContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    swiperContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchStartX - touchEndX > swipeThreshold) {
+            nextSlide();
+        }
+        if (touchEndX - touchStartX > swipeThreshold) {
+            prevSlide();
+        }
+    }
+
+    updateSlides();
+});
