@@ -11,9 +11,9 @@
       
       <!-- Логотип -->
       <a href="/" class="header-logo" aria-label="На главную">
-        <img src="https://optim.tildacdn.com/tild6439-3430-4862-b664-383061666161/-/resize/168x/-/format/webp/logotype.png.webp" 
-             alt="АВТОСТИЛЬ" 
-             class="header-logo__img">
+        <div class="text-red-500 text-2xl font-black italic tracking-tighter" vid="15">
+                        АВТО<span class="text-white" vid="16">СТИЛЬ</span>
+                    </div>
       </a>
 
       <!-- Десктопное меню -->
@@ -57,6 +57,7 @@
       <div class="header-actions">
         <a href="tel:88005508654" class="header-phone">
           <span class="header-phone__number">8 800 550 86 54</span>
+          <span class="header-phone__text">Звонок бесплатный</span>
         </a>
         <button type="button" class="btn btn--primary btn--sm open-modal" data-modal-target="callback-modal">
           ОБРАТНЫЙ ЗВОНОК
