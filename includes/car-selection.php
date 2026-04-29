@@ -1,7 +1,7 @@
 <section class="py-16 bg-gray-100 w-full relative overflow-hidden" vid="317">
         <div class="container mx-auto px-4 lg:px-8 relative z-10" vid="318">
-            <div class="flex flex-col lg:flex-row gap-12 items-center" vid="319">
-                <div class="flex flex-col" vid="320">
+            <div class="flex flex-col lg:flex-row gap-12 items-center justify-between" vid="319">
+                <div class="flex flex-col lg:w-1/2" vid="320">
                     <h2 class="text-3xl font-extrabold mb-8 leading-tight" vid="321">
                         При самостоятельном подборе Вы можете купить машину у недобросовестных продавцов
                     </h2>
@@ -30,12 +30,18 @@
                     </button>
                 </div>
                 
-                <div class="lg:w-1/2 w-full rounded-3xl overflow-hidden relative shadow-2xl self-stretch min-h-[300px]" vid="336">
-                    <img 
-                        src="../assets/broken-auto.webp" 
-                        class="absolute inset-0 w-full h-full object-cover"
-                    />
-                </div>
+                 <div class="flex flex-col lg:flex-row gap-12 justify-between relative" vid="319">
+    <div class="flex flex-col lg:w-1/2" vid="320">
+        <!-- левый контент без изменений -->
+    </div>
+    
+    <div class="lg:w-1/2 w-full lg:absolute lg:right-0 lg:top-0 lg:bottom-0 rounded-3xl overflow-hidden shadow-2xl min-h-[300px]" vid="336">
+        <img 
+            src="../assets/broken-auto.webp" 
+            class="w-full h-full object-cover object-top block"
+        />
+    </div>
+</div>
             </div>
         </div>
     </section>

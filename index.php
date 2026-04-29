@@ -31,6 +31,8 @@
     <?php include __DIR__ . '/includes/rating.php'; ?>
     <?php include __DIR__ . '/includes/guarantee.php'; ?>
 
+    <?php include __DIR__ . '/includes/car-selection.php'; ?>
+    <?php include __DIR__ . '/includes/reviews.php'; ?>
     <?php include __DIR__ . '/includes/checklist.php'; ?>
     <?php include __DIR__ . '/includes/workdays.php'; ?>
     <?php include __DIR__ . '/includes/customer-path.php'; ?>

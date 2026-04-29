@@ -16,10 +16,7 @@
                 <div class="flex-1 flex flex-col md:flex-row gap-6 w-full" vid="350">
                     <div class="md:w-1/2 bg-black rounded-xl overflow-hidden relative aspect-video flex items-center justify-center group cursor-pointer" vid="351">
                         
-                        <div class="absolute inset-0 bg-gray-800" vid="352"></div>
-                        <div class="w-16 h-16 bg-red-600/90 rounded-full flex items-center justify-center text-white z-10 group-hover:scale-110 transition-transform" vid="353">
-                            <i class="fa-solid fa-play ml-1 text-xl" vid="354"></i>
-                        </div>
+                        <iframe width="100%" height="100%" src="https://rutube.ru/play/embed/e09c52bbd91ed3c9a116120dac94f68e/" style="border: none;" allow="clipboard-write; autoplay" allowFullScreen></iframe>
                     </div>
                     <div class="md:w-1/2 flex flex-col justify-center" vid="355">
                         <h3 class="text-xl font-bold mb-3" vid="356">Skoda Rapid</h3>
@@ -64,17 +61,15 @@
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="373">
                     <div class="absolute inset-0 bg-gray-800" vid="374"></div>
                     <div class="absolute inset-0 flex items-center justify-center" vid="375">
-                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="376">
-                            <i class="fa-solid fa-play text-sm ml-1" vid="377"></i>
-                        </div>
+                        <!-- <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="376"> -->
+                           <iframe src="https://vkvideo.ru/video_ext.php?oid=-140659710&id=456239243&hash=e5d0298e613ac808&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="378">
                     <div class="absolute inset-0 bg-gray-800" vid="379"></div>
                     <div class="absolute inset-0 flex items-center justify-center" vid="380">
-                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="381">
-                            <i class="fa-solid fa-play text-sm ml-1" vid="382"></i>
-                        </div>
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-140659710&id=456239719&hash=5d4c54aeab5858d1&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="383">
