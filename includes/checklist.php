@@ -8,8 +8,8 @@
                 <div class="flex flex-col lg:flex-row gap-12 items-center relative z-10" vid="518">
                     <div class="lg:w-1/2 w-full max-w-md mx-auto relative" vid="519">
                         
-                        <div class="w-full aspect-[3/4] bg-gray-200 rounded-2xl relative overflow-hidden shadow-xl border border-gray-300" vid="520">
-                             <div class="absolute inset-0 bg-gray-800 flex items-center justify-center flex-col text-white p-6 text-center" vid="521">
+                        <div class="w-full bg-gray-200 rounded-2xl relative overflow-hidden shadow-xl border border-gray-300" vid="520">
+                             <!-- <div class="absolute inset-0 bg-gray-800 flex items-center justify-center flex-col text-white p-6 text-center" vid="521">
                                  <i class="fa-solid fa-user-tie text-6xl mb-4" vid="522"></i>
                                  <h4 class="font-bold text-xl mb-2" vid="523">ЧЕК-ЛИСТ</h4>
                                  <p class="text-sm text-gray-300" vid="524">Как выбрать надежный автомобиль в 2024 году</p>
@@ -21,8 +21,11 @@
                                  <div class="h-2 bg-gray-200 w-5/6 rounded" vid="528"></div>
                                  <div class="h-2 bg-gray-200 w-full rounded mt-2" vid="529"></div>
                                  <div class="h-2 bg-gray-200 w-4/5 rounded" vid="530"></div>
-                             </div>
-                        </div>
+                             </div> -->
+
+                             <img class="w-full" src="../assets/mustaev.webp"/>
+                            </div>
+                            <img class="absolute" style="bottom: 30px; right: -70px" src="../assets/checklist-pic.webp"/>
                     </div>
                     
                     <div class="lg:w-1/2" vid="531">

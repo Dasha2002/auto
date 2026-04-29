@@ -31,9 +31,6 @@
                 </div>
                 
                  <div class="flex flex-col lg:flex-row gap-12 justify-between relative" vid="319">
-    <div class="flex flex-col lg:w-1/2" vid="320">
-        <!-- левый контент без изменений -->
-    </div>
     
     <div class="lg:w-1/2 w-full lg:absolute lg:right-0 lg:top-0 lg:bottom-0 rounded-3xl overflow-hidden shadow-2xl min-h-[300px]" vid="336">
         <img 

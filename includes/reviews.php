@@ -75,49 +75,37 @@
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="383">
                     <div class="absolute inset-0 bg-gray-800" vid="384"></div>
                     <div class="absolute inset-0 flex items-center justify-center" vid="385">
-                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="386">
-                            <i class="fa-solid fa-play text-sm ml-1" vid="387"></i>
-                        </div>
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-140659710&id=456239229&hash=feb958f12b8b8035&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="388">
                     <div class="absolute inset-0 bg-gray-800" vid="389"></div>
                     <div class="absolute inset-0 flex items-center justify-center" vid="390">
-                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="391">
-                            <i class="fa-solid fa-play text-sm ml-1" vid="392"></i>
-                        </div>
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-140659710&id=456239650&hash=e6e99f507103ad6f&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="393">
                     <div class="absolute inset-0 bg-gray-800" vid="394"></div>
                     <div class="absolute inset-0 flex items-center justify-center" vid="395">
-                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="396">
-                            <i class="fa-solid fa-play text-sm ml-1" vid="397"></i>
-                        </div>
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-140659710&id=456239261&hash=4568ecede1a2db1b&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="398">
                     <div class="absolute inset-0 bg-gray-800" vid="399"></div>
                     <div class="absolute inset-0 flex items-center justify-center" vid="400">
-                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="401">
-                            <i class="fa-solid fa-play text-sm ml-1" vid="402"></i>
-                        </div>
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-140659710&id=456239259&hash=24eb3a0bfd46b1f7&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="403">
                     <div class="absolute inset-0 bg-gray-800" vid="404"></div>
                     <div class="absolute inset-0 flex items-center justify-center" vid="405">
-                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="406">
-                            <i class="fa-solid fa-play text-sm ml-1" vid="407"></i>
-                        </div>
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-140659710&id=456239281&hash=6acde807ff3e7d04&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="aspect-video bg-gray-200 rounded-xl relative overflow-hidden group cursor-pointer" vid="408">
                     <div class="absolute inset-0 bg-gray-800" vid="409"></div>
                     <div class="absolute inset-0 flex items-center justify-center" vid="410">
-                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-red-600 transition-colors" vid="411">
-                            <i class="fa-solid fa-play text-sm ml-1" vid="412"></i>
-                        </div>
+                        <iframe src="https://vkvideo.ru/video_ext.php?oid=-140659710&id=456239260&hash=bb9b96b7e562a55d&hd=4" width="1920" height="1080" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
