@@ -49,7 +49,7 @@
           <li><a href="/about" class="header-nav__link">О компании</a></li>
           <li><a href="/contacts" class="header-nav__link">Контакты</a></li>
           <li><a href="/news" class="header-nav__link">Новости</a></li>
-          <li><a href="/work" class="header-nav__link">Вакансии</a></li>
+          <!-- <li><a href="/work" class="header-nav__link">Вакансии</a></li> -->
         </ul>
       </nav>
 
@@ -135,7 +135,7 @@
           <li><a href="/video-reviews" class="mobile-menu__link">Отзывы</a></li>
           <li><a href="/about" class="mobile-menu__link">О компании</a></li>
           <li><a href="/news" class="mobile-menu__link">Новости</a></li>
-          <li><a href="/work" class="mobile-menu__link">Вакансии</a></li>
+          <!-- <li><a href="/work" class="mobile-menu__link">Вакансии</a></li> -->
           <li><a href="/contacts" class="mobile-menu__link">Контакты</a></li>
         </ul>
       </nav>

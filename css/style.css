@@ -1237,15 +1237,21 @@ img {
 
 /* ==================== RESPONSIVE ==================== */
 
+@media (max-width: 1240px) {
+  .header-phone {
+    display: none;
+  }
+}
+
 /* Mobile: до 768px */
 @media (max-width: 767px) {
   .header-fixed__inner {
     padding: 0 12px;
   }
   
-  .header-phone {
+  /* .header-phone {
     display: none !important;
-  }
+  } */
   
   .header-toggle {
     display: flex !important;
@@ -1291,6 +1297,14 @@ img {
   
   .mobile-menu {
     display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-actions {
+    button {
+      display: none;
+    }
   }
 }
 
