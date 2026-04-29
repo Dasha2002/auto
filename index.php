@@ -25,6 +25,10 @@
 
     <?php include __DIR__ . '/includes/header.php'; ?>
     <?php include __DIR__ . '/includes/popap.php'; ?>
+    <?php include __DIR__ . '/includes/car-selection.php'; ?>
+    <?php include __DIR__ . '/includes/reviews.php'; ?>
+    <?php include __DIR__ . '/includes/services.php'; ?>
+    <?php include __DIR__ . '/includes/service-consult.php'; ?>
     <?php include __DIR__ . '/includes/checklist.php'; ?>
     <?php include __DIR__ . '/includes/workdays.php'; ?>
     <?php include __DIR__ . '/includes/customer-path.php'; ?>
