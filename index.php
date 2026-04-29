@@ -25,6 +25,15 @@
 
     <?php include __DIR__ . '/includes/header.php'; ?>
     <?php include __DIR__ . '/includes/popap.php'; ?>
+    <?php include __DIR__ . '/includes/checklist.php'; ?>
+    <?php include __DIR__ . '/includes/workdays.php'; ?>
+    <?php include __DIR__ . '/includes/customer-path.php'; ?>
+    <?php include __DIR__ . '/includes/auto-check.php'; ?>
+    <?php include __DIR__ . '/includes/specialists.php'; ?>
+    <?php include __DIR__ . '/includes/news.php'; ?>
+    <?php include __DIR__ . '/includes/choose-us.php'; ?>
+    <?php include __DIR__ . '/includes/docs.php'; ?>
+    <?php include __DIR__ . '/includes/map.php'; ?>
     <?php include __DIR__ . '/includes/footer.php'; ?>
 
     <!-- Ваши скрипты -->
