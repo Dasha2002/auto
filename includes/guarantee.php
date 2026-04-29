@@ -11,7 +11,7 @@
                 <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow" vid="289">
                     <div class="h-48 bg-gray-200 relative" vid="290">
                         <div class="absolute inset-0 flex items-center justify-center text-gray-400" vid="291">
-                             <img src="https://static.tildacdn.com/tild3533-3565-4930-b031-616333376235/040.jpg">
+                             <img src="assets/гарантия - 1.webp">
                         </div>
                     </div>
                     <div class="p-6" vid="293">
@@ -26,7 +26,7 @@
                 <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow" vid="296">
                     <div class="h-48 bg-gray-200 relative" vid="297">
                         <div class="absolute inset-0 flex items-center justify-center text-gray-400" vid="298">
-                            <img src="https://static.tildacdn.com/tild3065-6661-4032-a233-636662313263/1584953850_mechanic_.jpg">
+                            <img src="assets/гарантия - 2.webp">
                         </div>
                     </div>
                     <div class="p-6" vid="300">
@@ -41,7 +41,7 @@
                 <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow" vid="303">
                     <div class="h-48 bg-gray-200 relative" vid="304">
                         <div class="absolute inset-0 flex items-center justify-center text-gray-400" vid="305">
-                             <img src="https://static.tildacdn.com/tild6134-3662-4834-b430-376236613532/174w-1920x1080.jpg">
+                             <img src="assets/гарантия - 3.webp">
                         </div>
                     </div>
                     <div class="p-6" vid="307">
