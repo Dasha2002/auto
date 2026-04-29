@@ -25,6 +25,12 @@
 
     <?php include __DIR__ . '/includes/header.php'; ?>
     <?php include __DIR__ . '/includes/popap.php'; ?>
+    <?php include __DIR__ . '/includes/hero.php'; ?>
+    <?php include __DIR__ . '/includes/calculator.php'; ?>
+    <?php include __DIR__ . '/includes/auto.php'; ?>
+    <?php include __DIR__ . '/includes/rating.php'; ?>
+    <?php include __DIR__ . '/includes/guarantee.php'; ?>
+
     <?php include __DIR__ . '/includes/checklist.php'; ?>
     <?php include __DIR__ . '/includes/workdays.php'; ?>
     <?php include __DIR__ . '/includes/customer-path.php'; ?>
@@ -37,7 +43,7 @@
     <?php include __DIR__ . '/includes/footer.php'; ?>
 
     <!-- Ваши скрипты -->
-    <script src="/js/main.js"></script>
+    <script src="/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
