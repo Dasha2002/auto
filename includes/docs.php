@@ -14,6 +14,7 @@
                         <div class="w-16 h-1 bg-gray-300 rounded mb-1" vid="801"></div>
                         <div class="w-12 h-1 bg-gray-300 rounded mb-1" vid="802"></div>
                         <div class="w-14 h-1 bg-gray-300 rounded" vid="803"></div>
+                        <!-- <img src="../assets/dkp-pic.webp"/> -->
                     </div>
                     <h3 class="font-medium text-sm mb-4 h-10" vid="804">Договор купли-продажи авто (составленный нашим юристом)</h3>
                     <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm font-bold transition-colors" vid="805">
@@ -27,6 +28,7 @@
                         <i class="fa-solid fa-file-invoice-dollar text-4xl mb-2" vid="808"></i>
                         <div class="w-16 h-1 bg-gray-300 rounded mb-1" vid="809"></div>
                         <div class="w-12 h-1 bg-gray-300 rounded mb-1" vid="810"></div>
+                        <!-- <img src="../assets/zadatok-pic.webp"/> -->
                     </div>
                     <h3 class="font-medium text-sm mb-4 h-10" vid="811">Договор задатка</h3>
                     <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm font-bold transition-colors" vid="812">
@@ -41,6 +43,7 @@
                         <div class="w-16 h-1 bg-gray-300 rounded mb-1" vid="816"></div>
                         <div class="w-14 h-1 bg-gray-300 rounded mb-1" vid="817"></div>
                         <div class="w-12 h-1 bg-gray-300 rounded" vid="818"></div>
+                        <!-- <img src="../assets/zayavlenie-pic.webp"/> -->
                     </div>
                     <h3 class="font-medium text-sm mb-4 h-10" vid="819">Образец заявления на постановку авто на учет</h3>
                     <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full text-sm font-bold transition-colors" vid="820">

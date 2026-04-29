@@ -400,3 +400,92 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateSlides();
 });
+
+// ===== КАРУСЕЛЬ ОТЗЫВОВ =====
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.reviews-carousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.carousel-track');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    // Берём ширину трека ДО того как делаем display:flex — пока слайды ещё не распёрли его
+    var slideWidth = track.offsetWidth;
+
+    // Настраиваем track как flex-контейнер для плавного слайда
+    track.style.display = 'flex';
+    track.style.transition = 'transform 0.4s ease';
+
+    // Каждый слайд — фиксированная ширина в px, чтобы трек не растягивался
+    slides.forEach(function(slide) {
+        slide.style.minWidth = slideWidth + 'px';
+        slide.style.width = slideWidth + 'px';
+        slide.style.flexShrink = '0';
+        slide.style.display = 'flex';
+    });
+
+    // Пересчитываем ширину при ресайзе окна
+    window.addEventListener('resize', function() {
+        slideWidth = track.offsetWidth;
+        slides.forEach(function(slide) {
+            slide.style.minWidth = slideWidth + 'px';
+            slide.style.width = slideWidth + 'px';
+        });
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
+        setTimeout(function() { track.style.transition = 'transform 0.4s ease'; }, 50);
+    });
+
+    // Создаём контейнер для точек сразу после карусели
+    var dotsContainer = document.createElement('div');
+    dotsContainer.className = 'carousel-dots';
+    carousel.insertAdjacentElement('afterend', dotsContainer);
+
+    // Генерируем точки
+    slides.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Слайд ' + (i + 1));
+        dot.addEventListener('click', function() { goTo(i); });
+        dotsContainer.appendChild(dot);
+    });
+
+    var dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function updateDots() {
+        dots.forEach(function(dot, i) {
+            dot.classList.toggle('is-active', i === currentIndex);
+        });
+    }
+
+    function goTo(index) {
+        currentIndex = (index + totalSlides) % totalSlides;
+        track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
+        updateDots();
+    }
+
+    // Показываем первый слайд
+    goTo(0);
+
+    if (prevBtn) prevBtn.addEventListener('click', function() { goTo(currentIndex - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { goTo(currentIndex + 1); });
+
+    // Touch / swipe поддержка
+    var touchStartX = 0;
+
+    track.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', function(e) {
+        var diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            goTo(diff > 0 ? currentIndex + 1 : currentIndex - 1);
+        }
+    }, { passive: true });
+});

@@ -11,7 +11,7 @@
                 <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow" vid="289">
                     <div class="h-48 bg-gray-200 relative" vid="290">
                         <div class="absolute inset-0 flex items-center justify-center text-gray-400" vid="291">
-                             <img src="assets/гарантия - 1.webp">
+                            <img src="assets/гарантия - 1.webp" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         </div>
                     </div>
                     <div class="p-6" vid="293">
@@ -26,7 +26,7 @@
                 <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow" vid="296">
                     <div class="h-48 bg-gray-200 relative" vid="297">
                         <div class="absolute inset-0 flex items-center justify-center text-gray-400" vid="298">
-                            <img src="assets/гарантия - 2.webp">
+                            <img src="assets/гарантия - 2.webp" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         </div>
                     </div>
                     <div class="p-6" vid="300">
@@ -41,7 +41,7 @@
                 <div class="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow" vid="303">
                     <div class="h-48 bg-gray-200 relative" vid="304">
                         <div class="absolute inset-0 flex items-center justify-center text-gray-400" vid="305">
-                             <img src="assets/гарантия - 3.webp">
+                            <img src="assets/гарантия - 3.webp" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                         </div>
                     </div>
                     <div class="p-6" vid="307">

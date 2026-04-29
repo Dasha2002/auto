@@ -5,7 +5,7 @@
             </h2>
             <p class="text-gray-600 mb-12" vid="778">Для автоподбора надежных авто в Перми</p>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8" vid="779">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" vid="779">
                 <div class="flex flex-col items-center" vid="780">
                     <div class="text-3xl md:text-4xl font-extrabold text-red-600 mb-2" vid="781">94% СЛУЧАЕВ</div>
                     <p class="text-sm text-gray-600" vid="782">Наши услуги бесплатны за счет торга с продавцом</p>

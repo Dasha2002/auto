@@ -25,7 +25,10 @@
 
                              <img class="w-full" src="../assets/mustaev.webp"/>
                             </div>
-                            <img class="absolute" style="bottom: 30px; right: -70px" src="../assets/checklist-pic.webp"/>
+                            <!-- <img class="absolute z-10" style="bottom: 30px; right: -80px" src="../assets/checklist-pic.webp"/> -->
+                            <div class="absolute flex items-center justify-center text-white p-4 z-5 text-xs sm:text-sm" style="right: 50%; bottom: -20px; background: #434342; width: 330px;  transform: translateX(50%)">
+                                Меня зовут Роман Мустаев, я руководитель ко﻿мпании и лично отвечаю за качество подбора каждого автомобиля
+                            </div>
                     </div>
                     
                     <div class="lg:w-1/2" vid="531">
