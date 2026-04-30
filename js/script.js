@@ -401,7 +401,50 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSlides();
 });
 
-// ===== КАРУСЕЛЬ ОТЗЫВОВ =====
+// ===== МОДАЛКА ДЛЯ ВИДЕО В СЕТКЕ =====
+
+document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('video-modal');
+    var modalBody = document.getElementById('video-modal-body');
+    var closeBtn = document.getElementById('video-modal-close');
+
+    if (!modal) return;
+
+    function openVideoModal(src) {
+        modalBody.innerHTML = '<iframe width="100%" height="100%" src="' + src + '" style="border:none; position:absolute; inset:0; width:100%; height:100%;" allow="clipboard-write; autoplay; encrypted-media; fullscreen; picture-in-picture;" allowfullscreen></iframe>';
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+        modal.style.display = 'none';
+        modalBody.innerHTML = ''; // останавливаем видео убирая iframe
+        document.body.style.overflow = '';
+    }
+
+    // Клик по карточке видео
+    document.querySelectorAll('.video-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+            var src = card.getAttribute('data-video-src');
+            if (src) openVideoModal(src);
+        });
+    });
+
+    // Закрытие по кнопке
+    closeBtn.addEventListener('click', closeVideoModal);
+
+    // Закрытие по клику на фон
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeVideoModal();
+    });
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeVideoModal();
+        }
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.reviews-carousel');

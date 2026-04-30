@@ -4,10 +4,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12" vid="849">
                 
                 <div vid="850">
-                    <div class="text-red-500 text-2xl font-black italic tracking-tighter mb-6" vid="851">
+                    <!-- <div class="text-red-500 text-2xl font-black italic tracking-tighter mb-6" vid="851">
                         АВТО<span class="text-white" vid="852">СТИЛЬ</span>
-                    </div>
-                    <p class="text-sm mb-6" vid="853">Автоподбор надежных автомобилей по всей России, из Китая и Кореи.</p>
+                    </div> -->
+                    <img width="100" src="../assets/logo-footer.webp"/>
+                    <p class="text-sm mb-6 mt-6" vid="853">Автоподбор надежных автомобилей по всей России, из Китая и Кореи.</p>
                     <div class="text-xs" vid="854">
                         <a href="https://variant.com/design/08db0d31-4d80-4c1e-a535-68826d3a4538.html?t=1777400494229#" class="hover:text-white block mb-2" vid="855">Политика конфиденциальности</a>
                         <p vid="856">© 2024 Автостиль. Все права защищены.</p>

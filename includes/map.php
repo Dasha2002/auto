@@ -11,8 +11,9 @@
         ></iframe>
     </div>
 
-    <!-- Карточка абсолютно позиционирована сама по себе, не растягивает контейнер -->
-    <div class="absolute top-1/2 right-4 lg:right-16 -translate-y-1/2 bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md z-10" vid="832">
+    <!-- Мобилка: по центру снизу. sm+: справа по вертикали по центру -->
+    <div class="map-contact-card bg-white rounded-2xl shadow-2xl p-8" vid="832">
+
         <h3 class="text-2xl font-bold mb-2" vid="833">А ДАВАЙТЕ НАШ МЕНЕДЖЕР ВАМ ПЕРЕЗВОНИТ</h3>
         <p class="text-sm text-gray-500 mb-6" vid="834">И ответит на все вопросы, проконсультирует при всех этапах работы.</p>
 

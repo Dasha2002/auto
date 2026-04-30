@@ -5021,3 +5021,93 @@ input[type="checkbox"] {
     flex: none !important;
   }
 }
+/* ===== КАРТОЧКИ ВИДЕО С ПРЕВЬЮ И КНОПКОЙ PLAY ===== */
+
+.video-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-card__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.25);
+    transition: background 0.2s;
+}
+
+.video-card:hover .video-card__overlay {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.video-card__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.video-card__play i {
+    width: 52px;
+    height: 52px;
+    background: rgba(220, 38, 38, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 4px;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-card:hover .video-card__play i {
+    transform: scale(1.12);
+    background: #dc2626;
+}
+
+.aspect-\[9\/16\] .video-card__play i {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+}
+
+@media (max-width: 500px) {
+
+  .order-choose-button {
+    align-self: center;
+  }
+}
+
+
+.map-contact-card {
+    position: absolute;
+    z-index: 10;
+    width: 340px;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (min-width: 640px) {
+    .map-contact-card {
+        width: 100%;
+        max-width: 448px;
+        bottom: auto;
+        top: 50%;
+        left: auto;
+        right: 16px;
+        transform: translateY(-50%);
+    }
+}
+
+@media (min-width: 1024px) {
+    .map-contact-card {
+        right: 64px;
+    }
+}

@@ -45,6 +45,7 @@
     <?php include __DIR__ . '/includes/docs.php'; ?>
     <?php include __DIR__ . '/includes/map.php'; ?>
     <?php include __DIR__ . '/includes/footer.php'; ?>
+    <?php include __DIR__ . '/includes/video-modal.php'; ?>
 
     <!-- Ваши скрипты -->
     <script src="/js/script.js"></script>
