@@ -59,7 +59,7 @@
           <span class="header-phone__number">8 800 550 86 54</span>
           <span class="header-phone__text">Звонок бесплатный</span>
         </a>
-        <button type="button" class="btn btn--primary btn--sm open-modal" data-modal-target="callback-modal">
+        <button type="button" class="btn btn--primary btn--sm open-modal btn-popap" data-modal-target="callback-modal">
           ОБРАТНЫЙ ЗВОНОК
         </button>
         <!-- Кнопка гамбургера -->
