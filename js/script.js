@@ -489,3 +489,184 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, { passive: true });
 });
+
+// popap
+
+document.addEventListener('DOMContentLoaded', function() {
+  const callbackModal = document.getElementById('callbackModal');
+  const closeBtn = callbackModal.querySelector('.callback-modal__close');
+  const overlay = callbackModal.querySelector('.callback-modal__overlay');
+  const form = document.getElementById('callbackForm');
+  const phoneInput = document.getElementById('phoneInput');
+  const triggerButtons = document.querySelectorAll('.btn-popap, .btn-popup, .open-callback-modal');
+
+
+  phoneInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    if (value.length > 0) {
+      if (value[0] === '7' || value[0] === '8') {
+        value = value.substring(1);
+      }
+    }
+    
+    let formattedValue = '';
+    if (value.length > 0) {
+      formattedValue = '(' + value.substring(0, 3);
+    }
+    if (value.length >= 3) {
+      formattedValue += ') ' + value.substring(3, 6);
+    }
+    if (value.length >= 6) {
+      formattedValue += '-' + value.substring(6, 8);
+    }
+    if (value.length >= 8) {
+      formattedValue += '-' + value.substring(8, 10);
+    }
+    
+    e.target.value = formattedValue;
+  });
+
+  function openModal() {
+    callbackModal.classList.add('is-active');
+    document.body.classList.add('modal-open');
+    
+    setTimeout(() => {
+      phoneInput.focus();
+    }, 300);
+  }
+  function closeModal() {
+    callbackModal.classList.remove('is-active');
+    document.body.classList.remove('modal-open');
+  }
+  triggerButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && callbackModal.classList.contains('is-active')) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const phone = phoneInput.value;
+    const checkbox = form.querySelector('input[type="checkbox"]');
+    
+    if (!checkbox.checked) {
+      alert('Пожалуйста, примите условия');
+      return;
+    }
+    
+    if (phone.length < 18) {
+      alert('Пожалуйста, введите корректный номер телефона');
+      phoneInput.focus();
+      return;
+    }
+    
+    alert('Спасибо! Мы перезвоним вам в ближайшее время.');
+    closeModal();
+    form.reset();
+  });
+});
+
+// popap - two
+document.addEventListener('DOMContentLoaded', function() {
+  const questionModal = document.getElementById('questionModal');
+  const closeBtn = questionModal.querySelector('.question-modal__close');
+  const overlay = questionModal.querySelector('.question-modal__overlay');
+  const form = document.getElementById('questionForm');
+  const phoneInput = document.getElementById('questionPhone');
+  const triggerButtons = document.querySelectorAll('.btn-popap-two');
+
+  phoneInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    if (value.length > 0) {
+      if (value[0] === '7' || value[0] === '8') {
+        value = value.substring(1);
+      }
+    }
+    
+    let formattedValue = '';
+    if (value.length > 0) {
+      formattedValue = '(' + value.substring(0, 3);
+    }
+    if (value.length >= 3) {
+      formattedValue += ') ' + value.substring(3, 6);
+    }
+    if (value.length >= 6) {
+      formattedValue += '-' + value.substring(6, 8);
+    }
+    if (value.length >= 8) {
+      formattedValue += '-' + value.substring(8, 10);
+    }
+    
+    e.target.value = formattedValue;
+  });
+
+  function openModal() {
+    questionModal.classList.add('is-active');
+    document.body.classList.add('question-modal-open');
+    
+    setTimeout(() => {
+      document.getElementById('questionName').focus();
+    }, 300);
+  }
+
+  function closeModal() {
+    questionModal.classList.remove('is-active');
+    document.body.classList.remove('question-modal-open');
+  }
+
+  triggerButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  
+  overlay.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && questionModal.classList.contains('is-active')) {
+      closeModal();
+    }
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('questionName').value;
+    const phone = phoneInput.value;
+    const question = document.getElementById('questionText').value;
+    const checkbox = form.querySelector('input[type="checkbox"]');
+    
+    if (!checkbox.checked) {
+      alert('Пожалуйста, примите условия');
+      return;
+    }
+    
+    if (phone.length < 18) {
+      alert('Пожалуйста, введите корректный номер телефона');
+      phoneInput.focus();
+      return;
+    }
+    
+    console.log('Question form submitted:', { name, phone, question });
+
+    alert('Спасибо за ваш вопрос! Мы свяжемся с вами в ближайшее время.');
+    closeModal();
+    form.reset();
+  });
+}); 
