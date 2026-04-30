@@ -54,7 +54,7 @@
             </div>
 
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6" vid="310">
-                <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-colors w-full sm:w-auto text-center" vid="311">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-colors w-full sm:w-auto text-center btn-popap-three" vid="311">
                     ПОДОБРАТЬ АВТОМОБИЛЬ
                 </button>
                 <div class="flex items-center gap-3 bg-gray-50 px-5 py-3 rounded-xl border border-gray-200" vid="312">

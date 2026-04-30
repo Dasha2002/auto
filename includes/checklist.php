@@ -59,7 +59,7 @@
                             </ul>
                         </div>
 
-                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-colors w-full sm:w-auto text-center pulse-animation" vid="548">
+                        <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-colors w-full sm:w-auto text-center pulse-animation btn-popap" vid="548">
                             ПОЛУЧИТЬ ЧЕК-ЛИСТ
                         </button>
                     </div>

@@ -11,9 +11,7 @@
       
       <!-- Логотип -->
       <a href="/" class="header-logo" aria-label="На главную">
-        <div class="text-red-500 text-2xl font-black italic tracking-tighter" vid="15">
-                        АВТО<span class="text-white" vid="16">СТИЛЬ</span>
-                    </div>
+        <img width="100" src="../assets/logo-footer.webp" alt="Автостиль"/>
       </a>
 
       <!-- Десктопное меню -->
@@ -161,7 +159,7 @@
         </div>
         <a href="tel:+79028020888" class="mobile-phone">+7 (902) 802-08-88</a>
         <p class="mobile-hours">Пн-Вс: 09:00 – 21:00</p>
-        <button type="button" class="btn btn--primary btn--full open-modal" data-modal-target="callback-modal">
+        <button type="button" class="btn btn--primary btn--full open-modal btn-popap-three" data-modal-target="callback-modal">
           Заказать автоподбор
         </button>
       </footer>

@@ -5097,7 +5097,9 @@ input[type="checkbox"] {
 }
 
 .callback-modal__header {
-  background: linear-gradient(135deg, #E31E24 0%, #DC2626 100%);
+  display: flex;
+  justify-content: center;
+  background: #111827;
   padding: 40px 30px;
   text-align: center;
   position: relative;
@@ -5578,7 +5580,9 @@ body.question-modal-open {
 }
 
 .question-modal__header {
-  background: linear-gradient(135deg, #E31E24 0%, #DC2626 100%);
+  display: flex;
+  justify-content: center;
+  background: #111827;
   padding: 35px 30px 30px;
   text-align: center;
   position: relative;
@@ -5996,4 +6000,48 @@ body.question-modal-open {
     .map-contact-card {
         right: 64px;
     }
+}
+
+/* ===== СЕЛЕКТ В СТИЛЕ question-modal — добавить в конец style.css ===== */
+
+.question-modal__select-wrapper {
+    position: relative;
+}
+
+.question-modal__select {
+    width: 100%;
+    padding: 14px 44px 14px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #1f2937;
+    background: #ffffff;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.question-modal__select:focus {
+    border-color: #E31E24;
+}
+
+.question-modal__select option[value=""][disabled] {
+    color: #9ca3af;
+}
+
+/* Стрелка */
+.question-modal__select-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.2s;
+}
+
+.question-modal__select:focus + .question-modal__select-arrow {
+    transform: translateY(-50%) rotate(180deg);
 }

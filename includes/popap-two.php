@@ -10,12 +10,7 @@
                         <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </button>
-
-                <a href="/" class="header-logo" aria-label="На главную">
-                    <div class="text-red-500 text-2xl font-black italic tracking-tighter" vid="15">
-                        АВТО<span class="text-white" vid="16">СТИЛЬ</span>
-                    </div>
-                </a>
+                <img src="../assets/logo-footer.webp"/>
             </div>
 
             <div class="question-modal__body">

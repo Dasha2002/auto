@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-colors inline-block text-center self-start" vid="335">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-colors inline-block text-center self-start btn-popap-three" vid="335">
                     ПОДОБРАТЬ АВТОМОБИЛЬ
                 </button>
             </div>

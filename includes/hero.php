@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="hero-actions">
-                    <button class="cta-button btn-popap-two">
+                    <button class="cta-button btn-popap-three">
                         ПОДОБРАТЬ 5 АВТО ПО ВАШИМ ПАРАМЕТРАМ СЕГОДНЯ
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>

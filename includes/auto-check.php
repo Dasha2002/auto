@@ -142,7 +142,7 @@
                         <span class="font-bold text-gray-900 text-lg" vid="697">5 000 ₽</span>
                     </div>
                 </div>
-                <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold shadow-md transition-colors w-full text-center" vid="698">
+                <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold shadow-md transition-colors w-full text-center btn-popap-three" vid="698">
                     ПОДОБРАТЬ АВТОМОБИЛЬ
                 </button>
                 <p class="text-xs text-gray-400 text-center" vid="699">Узнайте окончательную стоимость со скидкой 5 000 ₽ на автоподбор</p>
