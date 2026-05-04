@@ -61,12 +61,8 @@
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs" vid="899">
+            <div class="border-t border-gray-800 px-4 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs" vid="899">
                  <div vid="900">ИНН 1234567890 | ОГРН 1234567890123</div>
-                 <div class="flex items-center gap-2 bg-gray-800 px-3 py-1.5 rounded-lg" vid="901">
-                     <span class="w-2 h-2 rounded-full bg-green-500" vid="902"></span>
-                     Разработка сайта
-                 </div>
             </div>
         
     <!-- </footer> -->
