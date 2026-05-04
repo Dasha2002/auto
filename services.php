@@ -28,6 +28,8 @@
     <?php include __DIR__ . '/includes/popap.php'; ?>
     <?php include __DIR__ . '/includes/popap-two.php'; ?>
     <?php include __DIR__ . '/includes/popap-three.php'; ?>
+    <?php include __DIR__ . '/includes/video-modal.php'; ?>
+
     <?php include __DIR__ . '/includes/services-list.php'; ?>
     <?php include __DIR__ . '/includes/service-consult.php'; ?>
     <?php include __DIR__ . '/includes/auto.php'; ?>

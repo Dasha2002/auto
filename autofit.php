@@ -23,6 +23,7 @@
     <?php include __DIR__ . '/includes/header.php'; ?>
     <?php include __DIR__ . '/includes/popap.php'; ?>
     <?php include __DIR__ . '/includes/popap-two.php'; ?>
+    <?php include __DIR__ . '/includes/video-modal.php'; ?>
 
     <?php include __DIR__ . '/includes/autofit-hero.php'; ?>
     <?php include __DIR__ . '/includes/autofit-inf.php'; ?>
