@@ -127,6 +127,11 @@ textarea {
   .md\:hidden {
     display: none;
   }
+
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3309,6 +3314,11 @@ img {
   .lg\:flex {
     display: flex;
   }
+
+  .lg\:justify-between {
+    justify-content: space-between;
+  }
+
   .lg\:hidden {
     display: none;
   }
@@ -4769,7 +4779,7 @@ input[type="checkbox"] {
 }
 
 .customer-path-section {
-  background-image: url("https://optim.tildacdn.com/tild6538-3935-4532-b766-313234326137/-/format/webp/bg-how-we-work.png.webp");
+  background-image: url("../assets/customer-path-section-bg.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6044,4 +6054,777 @@ body.question-modal-open {
 
 .question-modal__select:focus + .question-modal__select-arrow {
     transform: translateY(-50%) rotate(180deg);
+}
+
+
+/* SERVICES-LIST */
+.services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 160px;
+}
+
+/* ===== СЕКЦИЯ УСЛУГ — добавить в конец style.css ===== */
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 1023px) {
+    .services-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 639px) {
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Карточка */
+.service-card {
+    height: 500px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    cursor: pointer;
+    /* transition: box-shadow 0.25s ease, transform 0.25s ease; */
+}
+
+.service-card:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Изображение — 50% высоты карточки */
+.service-card__image {
+    position: relative;
+    height: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #e5e7eb;
+}
+
+.service-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-card__image img {
+    transform: scale(1.04);
+}
+
+/* Тело карточки */
+.service-card__body {
+    flex: 1;
+    padding: 20px 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.service-card__title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.service-card__desc {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.55;
+    margin: 0;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.service-card__price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #dc2626;
+    margin-top: 4px;
+}
+
+/* Кнопки внизу карточки */
+.service-card__footer {
+    padding: 12px 20px 20px;
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.service-card__btn {
+    flex: 1;
+    padding: 11px 8px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+.service-card__btn--primary {
+    background: #dc2626;
+    color: #fff;
+    border: 2px solid #dc2626;
+}
+
+.service-card__btn--primary:hover {
+    background: #b91c1c;
+    border-color: #b91c1c;
+}
+
+.service-card__btn--outline {
+    background: transparent;
+    color: #575757;
+    border: 1px solid #575757;
+}
+
+.service-card__btn--outline:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+/* ===== ПОПАП ЗАКАЗА УСЛУГИ — добавить в конец style.css ===== */
+.order-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 40px 16px;
+}
+
+.order-modal.is-active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.order-modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+.order-modal__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 560px;
+}
+
+.order-modal__content {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: orderModalIn 0.3s ease-out;
+}
+
+@keyframes orderModalIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.order-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px 0;
+}
+
+.order-modal__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.order-modal__close {
+    width: 36px;
+    height: 36px;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 50%;
+    color: #6b7280;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.order-modal__close:hover {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.order-modal__body {
+    padding: 20px 28px 28px;
+}
+
+/* Список услуг */
+.order-modal__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.order-modal__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.order-modal__item-img {
+    width: 72px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #e5e7eb;
+}
+
+.order-modal__item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.order-modal__item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Счётчик количества */
+.order-modal__item-qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-modal__qty-btn {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 50%;
+    background: transparent;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.order-modal__qty-btn:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+.order-modal__qty-value {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 16px;
+    text-align: center;
+}
+
+.order-modal__item-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.order-modal__item-remove {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: color 0.15s, background 0.15s;
+    flex-shrink: 0;
+}
+
+.order-modal__item-remove:hover {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+/* Сумма */
+.order-modal__subtotal {
+    text-align: right;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+    padding: 14px 0 16px;
+}
+
+.order-modal__divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 0 0 20px;
+}
+
+/* Телефон */
+.order-modal__form-group {
+    margin-bottom: 20px;
+}
+
+.order-modal__label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.order-modal__hint {
+    font-size: 13px;
+    color: #9ca3af;
+    margin: 0 0 10px;
+}
+
+.order-modal__phone-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.order-modal__phone-wrapper:focus-within {
+    border-color: #dc2626;
+}
+
+.order-modal__country-code {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 14px 12px;
+    background: #f9fafb;
+    border-right: 1.5px solid #e5e7eb;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    flex-shrink: 0;
+    cursor: default;
+}
+
+.order-modal__flag {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.order-modal__code {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.order-modal__phone-input {
+    flex: 1;
+    border: none !important;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    background: transparent;
+    color: #111827;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+}
+
+.order-modal__phone-input::placeholder {
+    color: #9ca3af;
+}
+
+/* Итог */
+.order-modal__total {
+    text-align: right;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+/* Кнопка */
+.order-modal__submit {
+    width: 100%;
+    padding: 18px;
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-bottom: 16px;
+}
+
+.order-modal__submit:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.order-modal__note {
+    font-size: 13px;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.order-modal__privacy {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    margin: 0;
+}
+
+.order-modal__privacy a {
+    color: #dc2626;
+    text-decoration: underline;
+}
+
+/* Пустая корзина */
+.order-modal__empty {
+    text-align: center;
+    padding: 24px 0;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .order-modal {
+        padding: 0;
+        align-items: flex-end !important;
+    }
+
+    .order-modal__content {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .order-modal__container {
+        max-width: 100%;
+    }
+}
+
+.service-consult-section {
+  height: 500px;
+  background-image: url('../assets/order-service-consult-bg.webp');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  background-color: transparent;
+}
+.service-consult-section .container {
+  position: relative;
+  z-index: 1;
+} 
+
+.service-consult-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* ABOUT SECTION */
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 160px;
+
+  .about-description {
+    width: 40%;
+    text-align: center;
+
+    @media (max-width: 1024px) {
+      width: 70%;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+/* ===== ACCORDION VACANCIES ===== */
+
+.vacancies-accordion {
+    border-top: 1px solid #e5e7eb;
+}
+
+.vacancy-item {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.vacancy-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+}
+
+.vacancy-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+}
+
+.vacancy-icon {
+    flex-shrink: 0;
+    color: #dc2626;
+    transition: transform 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vacancy-item.is-open .vacancy-icon {
+    transform: rotate(45deg);
+}
+
+/* Плавное раскрытие через grid */
+.vacancy-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.vacancy-item.is-open .vacancy-body {
+    grid-template-rows: 1fr;
+}
+
+.vacancy-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 0;
+    transition: padding-bottom 0.35s ease;
+}
+
+.vacancy-item.is-open .vacancy-content {
+    padding-bottom: 28px;
+}
+
+.vacancy-content p {
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.vacancy-section-title {
+    font-weight: 700 !important;
+    color: #111827 !important;
+    margin-top: 8px !important;
+}
+
+.vacancy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.vacancy-list li {
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+}
+
+.vacancy-list li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: #dc2626;
+    font-weight: 700;
+}
+
+.vacancy-apply {
+    display: inline-block;
+    margin-top: 8px;
+    color: #dc2626;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+    width: fit-content;
+}
+
+.vacancy-apply:hover {
+    border-color: #dc2626;
+}
+
+/* ===== СЕКЦИЯ КОНТАКТОВ ===== */
+.contacts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 160px 0;
+}
+
+.contacts-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .contacts-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* Левая колонка */
+.contacts-info__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.contacts-info__row {
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #111827;
+    text-decoration: none;
+}
+
+a.contacts-info__row .contacts-info__value {
+    color: #dc2626;
+}
+
+.contacts-info__label {
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.contacts-info__value {
+    color: #374151;
+    transition: color 0.2s;
+}
+
+/* Соцсети */
+.contacts-socials {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contacts-socials__link {
+    width: 48px;
+    height: 48px;
+    background: #dc2626;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.contacts-socials__link svg {
+    width: 22px;
+    height: 22px;
+}
+
+.contacts-socials__link:hover {
+    background: #b91c1c;
+    transform: scale(1.08);
+}
+
+/* Правая колонка: картинка */
+.contacts-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: #e5e7eb;
+    max-width: 460px;
+}
+
+.contacts-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }

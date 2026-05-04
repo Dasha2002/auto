@@ -1,4 +1,4 @@
-<section class="py-16 bg-[#333333] text-white text-center w-full" vid="507">
+<section class="py-16 text-white text-center w-full flex flex-col justify-center service-consult-section" vid="507">
         <div class="container mx-auto px-4" vid="508">
             <h2 class="text-2xl md:text-3xl font-extrabold mb-4 uppercase tracking-wide" vid="509">
                 НЕ ЗНАЕТЕ КАКАЯ УСЛУГА ВАМ НУЖНА?

@@ -561,7 +561,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // popap
-// popap
 
 document.addEventListener("DOMContentLoaded", function () {
   const callbackModal = document.getElementById("callbackModal");
@@ -800,4 +799,354 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
     });
   }
+});
+
+// ===== ПОПАП ЗАКАЗА УСЛУГИ (ЕДИНСТВЕННЫЙ БЛОК — дубль удалён) =====
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  var orderModal = document.getElementById('orderModal');
+  if (!orderModal) return;
+
+  var overlay    = orderModal.querySelector('.order-modal__overlay');
+  var closeBtn   = orderModal.querySelector('.order-modal__close');
+  var itemsEl    = document.getElementById('orderItems');
+  var subtotalEl = document.getElementById('orderSubtotal');
+  var totalEl    = document.getElementById('orderTotal');
+  var phoneInput = document.getElementById('orderPhone');
+  var submitBtn  = document.getElementById('orderSubmit');
+
+  var CART_KEY = 'autostyle_cart';
+
+  // In-memory fallback если localStorage недоступен
+  var _memCart = [];
+  var _useMemory = false;
+  try { localStorage.setItem('_test', '1'); localStorage.removeItem('_test'); }
+  catch (e) { _useMemory = true; console.warn('localStorage недоступен, используем память'); }
+
+  // ===== КОРЗИНА =====
+
+  function getCart() {
+    if (_useMemory) return _memCart;
+    try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+    catch (e) { return []; }
+  }
+
+  function saveCart(cart) {
+    if (_useMemory) { _memCart = cart; return; }
+    try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+    catch (e) { console.error('Ошибка сохранения корзины', e); }
+  }
+
+  function addToCart(service) {
+    var cart = getCart();
+    var existing = cart.find(function (i) { return i.id === service.id; });
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id: service.id, name: service.name, price: service.price, image: service.image, qty: 1 });
+    }
+    saveCart(cart);
+  }
+
+  function removeFromCart(id) {
+    saveCart(getCart().filter(function (i) { return i.id !== id; }));
+  }
+
+  function updateQty(id, delta) {
+    var cart = getCart();
+    var item = cart.find(function (i) { return i.id === id; });
+    if (!item) return;
+    var newQty = item.qty + delta;
+    if (newQty <= 0) {
+      // Удаляем товар если qty опускается до 0
+      removeFromCart(id);
+    } else {
+      item.qty = newQty;
+      saveCart(cart);
+    }
+  }
+
+  function getTotal() {
+    return getCart().reduce(function (sum, i) { return sum + i.price * i.qty; }, 0);
+  }
+
+  function formatPrice(n) {
+    return n.toLocaleString('ru-RU') + ' ₽';
+  }
+
+  // ===== РЕНДЕР КОРЗИНЫ =====
+  // Обработчики qty и remove вешаются один раз через делегирование на itemsEl — НЕ внутри renderCart
+
+  function renderCart() {
+    var cart = getCart();
+    itemsEl.innerHTML = '';
+
+    if (cart.length === 0) {
+      itemsEl.innerHTML = '<div class="order-modal__empty">Корзина пуста</div>';
+      subtotalEl.textContent = formatPrice(0);
+      totalEl.textContent    = formatPrice(0);
+      return;
+    }
+
+    cart.forEach(function (item) {
+      var row = document.createElement('div');
+      row.className = 'order-modal__item';
+      row.innerHTML =
+        '<img class="order-modal__item-img" src="' + (item.image || '') + '" alt="' + item.name + '">' +
+        '<div class="order-modal__item-info">' +
+          '<p class="order-modal__item-name">' + item.name + '</p>' +
+          '<div class="order-modal__item-qty">' +
+            '<button class="order-modal__qty-btn" data-action="dec" data-id="' + item.id + '">−</button>' +
+            '<span class="order-modal__qty-value">' + item.qty + '</span>' +
+            '<button class="order-modal__qty-btn" data-action="inc" data-id="' + item.id + '">+</button>' +
+          '</div>' +
+        '</div>' +
+        '<span class="order-modal__item-price">' + formatPrice(item.price * item.qty) + '</span>' +
+        '<button class="order-modal__item-remove" data-id="' + item.id + '" title="Удалить">' +
+          '<svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
+        '</button>';
+      itemsEl.appendChild(row);
+    });
+
+    var total = getTotal();
+    subtotalEl.textContent = formatPrice(total);
+    totalEl.textContent    = formatPrice(total);
+  }
+
+  // Делегирование на itemsEl — вешается ОДИН РАЗ, не при каждом renderCart
+  itemsEl.addEventListener('click', function (e) {
+    e.stopPropagation(); // не всплываем до orderModal
+
+    var qtyBtn    = e.target.closest('.order-modal__qty-btn');
+    var removeBtn = e.target.closest('.order-modal__item-remove');
+
+    if (qtyBtn) {
+      var id     = qtyBtn.getAttribute('data-id');
+      var action = qtyBtn.getAttribute('data-action');
+      updateQty(id, action === 'inc' ? 1 : -1);
+      renderCart();
+      return;
+    }
+
+    if (removeBtn) {
+      removeFromCart(removeBtn.getAttribute('data-id'));
+      renderCart();
+      return;
+    }
+  });
+
+  // ===== ОТКРЫТИЕ / ЗАКРЫТИЕ =====
+
+  function openOrderModal() {
+    renderCart();
+    orderModal.classList.add('is-active');
+    document.body.classList.add('modal-open');
+    setTimeout(function () { if (phoneInput) phoneInput.focus(); }, 300);
+  }
+
+  function closeOrderModal() {
+    orderModal.classList.remove('is-active');
+    document.body.classList.remove('modal-open');
+  }
+
+  closeBtn && closeBtn.addEventListener('click', closeOrderModal);
+  overlay  && overlay.addEventListener('click', closeOrderModal);
+
+  orderModal.addEventListener('click', function (e) {
+    if (!e.target.closest('.order-modal__content')) closeOrderModal();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && orderModal.classList.contains('is-active')) closeOrderModal();
+  });
+
+  // ===== КЛИК ПО КАРТОЧКЕ / КНОПКЕ ЗАКАЗАТЬ =====
+  // Обработчики вешаются ОДИН РАЗ — дублирующего блока больше нет
+
+  document.querySelectorAll('.service-card').forEach(function (card) {
+
+    function getServiceData() {
+      var img = card.querySelector('.service-card__image img');
+      return {
+        id:    card.getAttribute('data-service-id') || (img && img.getAttribute('data-id')) || card.querySelector('.service-card__title').textContent.trim(),
+        name:  card.querySelector('.service-card__title').textContent.trim(),
+        price: parseInt(card.getAttribute('data-service-price') || (img && img.getAttribute('data-price')) || '0', 10),
+        image: img ? img.src : ''
+      };
+    }
+
+    // Кнопка «Заказать» — добавляет и открывает, не всплывает на карточку
+    var orderBtn = card.querySelector('.service-card__btn--primary');
+    if (orderBtn) {
+      orderBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        addToCart(getServiceData());
+        openOrderModal();
+      });
+    }
+
+    // Клик на карточку (кроме «Подробнее» и «Заказать»)
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('.service-card__btn--outline')) return;
+      if (e.target.closest('.service-card__btn--primary')) return;
+      addToCart(getServiceData());
+      openOrderModal();
+    });
+  });
+
+  // ===== МАСКА ТЕЛЕФОНА =====
+
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function (e) {
+      var value = e.target.value.replace(/\D/g, '');
+      if (value.length > 0 && (value[0] === '7' || value[0] === '8')) {
+        value = value.substring(1);
+      }
+      var fmt = '';
+      if (value.length > 0) fmt = '(' + value.substring(0, 3);
+      if (value.length >= 3) fmt += ') ' + value.substring(3, 6);
+      if (value.length >= 6) fmt += '-' + value.substring(6, 8);
+      if (value.length >= 8) fmt += '-' + value.substring(8, 10);
+      e.target.value = fmt;
+    });
+  }
+
+  // ===== ОТПРАВКА =====
+
+  submitBtn && submitBtn.addEventListener('click', function () {
+    var phone = phoneInput ? phoneInput.value : '';
+    if (phone.replace(/\D/g, '').length < 10) {
+      alert('Пожалуйста, введите корректный номер телефона');
+      if (phoneInput) phoneInput.focus();
+      return;
+    }
+    var cart = getCart();
+    if (cart.length === 0) {
+      alert('Корзина пуста');
+      return;
+    }
+    console.log('Order submitted:', { phone: '+7 ' + phone, cart: cart });
+    alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+    saveCart([]);
+    closeOrderModal();
+  });
+
+});
+
+// ===== АККОРДЕОН ВАКАНСИЙ =====
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.vacancy-header').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var item = btn.closest('.vacancy-item');
+            var isOpen = item.classList.contains('is-open');
+
+            // Закрыть все
+            document.querySelectorAll('.vacancy-item').forEach(function (el) {
+                el.classList.remove('is-open');
+                el.querySelector('.vacancy-header').setAttribute('aria-expanded', 'false');
+            });
+
+            // Открыть текущий если был закрыт
+            if (!isOpen) {
+                item.classList.add('is-open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+});
+
+// ===== ПОПАП ОТКЛИКА НА ВАКАНСИЮ (btn-popap-four) =====
+// Добавить в конец script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    var vacancyModal = document.getElementById('vacancyModal');
+    if (!vacancyModal) return;
+
+    var closeBtn      = vacancyModal.querySelector('.question-modal__close');
+    var overlay       = vacancyModal.querySelector('.question-modal__overlay');
+    var form          = document.getElementById('vacancyForm');
+    var phoneInput    = document.getElementById('vacancyPhone');
+    var triggerButtons = document.querySelectorAll('.btn-popap-four');
+
+    // Маска телефона
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            var value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0 && (value[0] === '7' || value[0] === '8')) {
+                value = value.substring(1);
+            }
+            var fmt = '';
+            if (value.length > 0) fmt = '(' + value.substring(0, 3);
+            if (value.length >= 3) fmt += ') ' + value.substring(3, 6);
+            if (value.length >= 6) fmt += '-' + value.substring(6, 8);
+            if (value.length >= 8) fmt += '-' + value.substring(8, 10);
+            e.target.value = fmt;
+        });
+    }
+
+    function openModal() {
+        vacancyModal.classList.add('is-active');
+        document.body.classList.add('question-modal-open');
+        setTimeout(function() {
+            var nameInput = document.getElementById('vacancyName');
+            if (nameInput) nameInput.focus();
+        }, 300);
+    }
+
+    function closeModal() {
+        vacancyModal.classList.remove('is-active');
+        document.body.classList.remove('question-modal-open');
+    }
+
+    // Открытие по классу .btn-popap-four
+    triggerButtons.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    closeBtn && closeBtn.addEventListener('click', closeModal);
+
+    // Закрытие по клику вне контента
+    vacancyModal.addEventListener('click', function(e) {
+        if (!e.target.closest('.question-modal__content')) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && vacancyModal.classList.contains('is-active')) closeModal();
+    });
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var name     = document.getElementById('vacancyName').value.trim();
+            var phone    = phoneInput ? phoneInput.value : '';
+            var checkbox = form.querySelector('input[type="checkbox"]');
+
+            if (!name) {
+                alert('Пожалуйста, введите ваше имя');
+                document.getElementById('vacancyName').focus();
+                return;
+            }
+
+            if (!checkbox.checked) {
+                alert('Пожалуйста, примите условия');
+                return;
+            }
+
+            if (phone.replace(/\D/g, '').length < 10) {
+                alert('Пожалуйста, введите корректный номер телефона');
+                if (phoneInput) phoneInput.focus();
+                return;
+            }
+
+            console.log('Vacancy form submitted:', { name: name, phone: '+7 ' + phone });
+            alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+            closeModal();
+            form.reset();
+        });
+    }
 });

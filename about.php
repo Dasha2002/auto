@@ -23,31 +23,19 @@
 </head>
 <body>
 
-    <?php include __DIR__ . '/includes/header.php'; ?>
     <?php include __DIR__ . '/includes/popap.php'; ?>
     <?php include __DIR__ . '/includes/popap-two.php'; ?>
     <?php include __DIR__ . '/includes/popap-three.php'; ?>
-    <?php include __DIR__ . '/includes/hero.php'; ?>
-    <?php include __DIR__ . '/includes/calculator.php'; ?>
-    <?php include __DIR__ . '/includes/auto.php'; ?>
-    <?php include __DIR__ . '/includes/rating.php'; ?>
-    <?php include __DIR__ . '/includes/guarantee.php'; ?>
+    <?php include __DIR__ . '/includes/vacancy-modal.php'; ?>
 
-    <?php include __DIR__ . '/includes/car-selection.php'; ?>
-    <?php include __DIR__ . '/includes/reviews.php'; ?>
-    <?php include __DIR__ . '/includes/services-section.php'; ?>
-    <?php include __DIR__ . '/includes/service-consult.php'; ?>
-    <?php include __DIR__ . '/includes/checklist.php'; ?>
-    <?php include __DIR__ . '/includes/workdays.php'; ?>
-    <?php include __DIR__ . '/includes/customer-path.php'; ?>
-    <?php include __DIR__ . '/includes/auto-check.php'; ?>
+    <?php include __DIR__ . '/includes/header.php'; ?>
+
+    <?php include __DIR__ . '/includes/about-section.php'; ?>
+    <?php include __DIR__ . '/includes/advantages.php'; ?>
     <?php include __DIR__ . '/includes/specialists.php'; ?>
-    <?php include __DIR__ . '/includes/news.php'; ?>
-    <?php include __DIR__ . '/includes/choose-us.php'; ?>
-    <?php include __DIR__ . '/includes/docs.php'; ?>
+    <?php include __DIR__ . '/includes/vacancies.php'; ?>
     <?php include __DIR__ . '/includes/map.php'; ?>
     <?php include __DIR__ . '/includes/footer.php'; ?>
-    <?php include __DIR__ . '/includes/video-modal.php'; ?>
 
     <!-- Ваши скрипты -->
     <script src="/js/script.js"></script>
