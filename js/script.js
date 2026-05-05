@@ -1152,3 +1152,200 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// Миниатюра на странице товара
+
+class ProductGallery {
+  constructor() {
+    this.mainImage = document.getElementById('mainImage');
+    this.thumbsContainer = document.getElementById('galleryThumbs');
+    this.thumbs = document.querySelectorAll('.thumb');
+    this.prevBtn = document.querySelector('.gallery-nav--prev');
+    this.nextBtn = document.querySelector('.gallery-nav--next');
+    this.currentSlideEl = document.getElementById('currentSlide');
+    this.totalSlidesEl = document.getElementById('totalSlides');
+    
+    this.currentIndex = 0;
+    this.images = [];
+    this.isAnimating = false;
+    
+    this.init();
+  }
+  
+  init() {
+    this.thumbs.forEach((thumb, index) => {
+      const img = thumb.querySelector('img');
+      this.images.push(img.src);
+      
+      thumb.addEventListener('click', () => {
+        if (!this.isAnimating) {
+          this.goToSlide(index);
+        }
+      });
+    });
+
+    if (this.totalSlidesEl) {
+      this.totalSlidesEl.textContent = this.images.length;
+    }
+    
+    if (this.prevBtn) {
+      this.prevBtn.addEventListener('click', () => {
+        if (!this.isAnimating) {
+          this.prev();
+        }
+      });
+    }
+    
+    if (this.nextBtn) {
+      this.nextBtn.addEventListener('click', () => {
+        if (!this.isAnimating) {
+          this.next();
+        }
+      });
+    }
+    
+    document.addEventListener('keydown', (e) => {
+      if (!this.isAnimating) {
+        if (e.key === 'ArrowLeft') {
+          this.prev();
+        } else if (e.key === 'ArrowRight') {
+          this.next();
+        }
+      }
+    });
+    
+    this.initSwipe();
+    this.updateCounter();
+  }
+  
+  goToSlide(index) {
+    if (index < 0 || index >= this.images.length || index === this.currentIndex) return;
+    
+    this.isAnimating = true;
+    this.currentIndex = index;
+    this.updateGallery();
+    
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 400);
+  }
+  
+  prev() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.updateGallery();
+    }
+  }
+  
+  next() {
+    if (this.currentIndex < this.images.length - 1) {
+      this.currentIndex++;
+      this.updateGallery();
+    }
+  }
+  
+  updateGallery() {
+    if (this.mainImage) {
+      this.mainImage.classList.add('fade-out');
+      
+      setTimeout(() => {
+        this.mainImage.src = this.images[this.currentIndex];
+        
+        this.mainImage.onload = () => {
+          this.mainImage.classList.remove('fade-out');
+          this.mainImage.classList.add('fade-in');
+          
+          setTimeout(() => {
+            this.mainImage.classList.remove('fade-in');
+          }, 400);
+        };
+      }, 200);
+    }
+    
+    this.thumbs.forEach((thumb, index) => {
+      if (index === this.currentIndex) {
+        thumb.classList.add('thumb--active');
+      
+        if (this.thumbsContainer) {
+          const thumbRect = thumb.getBoundingClientRect();
+          const containerRect = this.thumbsContainer.getBoundingClientRect();
+          const scrollLeft = thumb.offsetLeft - (containerRect.width / 2) + (thumbRect.width / 2);
+          
+          this.thumbsContainer.scrollTo({
+            left: scrollLeft,
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        thumb.classList.remove('thumb--active');
+      }
+    });
+    
+    this.updateCounter();
+    this.updateButtons();
+  }
+  
+  updateCounter() {
+    if (this.currentSlideEl) {
+      this.currentSlideEl.textContent = this.currentIndex + 1;
+    }
+  }
+  
+  updateButtons() {
+    if (this.prevBtn) {
+      this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.3' : '1';
+      this.prevBtn.style.cursor = this.currentIndex === 0 ? 'not-allowed' : 'pointer';
+    }
+    
+    if (this.nextBtn) {
+      this.nextBtn.style.opacity = this.currentIndex === this.images.length - 1 ? '0.3' : '1';
+      this.nextBtn.style.cursor = this.currentIndex === this.images.length - 1 ? 'not-allowed' : 'pointer';
+    }
+  }
+  
+  initSwipe() {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartTime = 0;
+    const galleryMain = document.querySelector('.product-gallery-main');
+    
+    if (!galleryMain) return;
+    
+    galleryMain.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartTime = new Date().getTime();
+    }, { passive: true });
+    
+    galleryMain.addEventListener('touchend', (e) => {
+      if (!this.isAnimating) {
+        touchEndX = e.changedTouches[0].screenX;
+        const touchEndTime = new Date().getTime();
+        const timeDiff = touchEndTime - touchStartTime;
+        
+        this.handleSwipe(touchStartX, touchEndX, timeDiff);
+      }
+    }, { passive: true });
+  }
+  
+  handleSwipe(startX, endX, timeDiff) {
+    const swipeThreshold = 50;
+    const timeThreshold = 300; 
+    const diff = startX - endX;
+    
+    if (Math.abs(diff) > swipeThreshold && timeDiff < timeThreshold) {
+      if (diff > 0) {
+        this.next();
+      } else {
+        this.prev();
+      }
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mainImage = document.getElementById('mainImage');
+  if (mainImage) {
+    new ProductGallery();
+  }
+});
