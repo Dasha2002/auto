@@ -20,20 +20,21 @@
     
     <!-- Ваши стили -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auto-page.css">
 </head>
 <body>
 
-    <?php include __DIR__ . '/includes/order-service-modal.php'; ?>
-    <?php include __DIR__ . '/includes/header.php'; ?>
-    <?php include __DIR__ . '/includes/popap.php'; ?>
-    <?php include __DIR__ . '/includes/popap-two.php'; ?>
-    <?php include __DIR__ . '/includes/popap-three.php'; ?>
+    <?php include __DIR__ . '/includes/order-service-modal/order-service-modal.php'; ?>
+    <?php include __DIR__ . '/includes/header/header.php'; ?>
+    <?php include __DIR__ . '/includes/popap/popap.php'; ?>
+    <?php include __DIR__ . '/includes/popap/popap-two.php'; ?>
+    <?php include __DIR__ . '/includes/popap/popap-three.php'; ?>
 
-    <?php include __DIR__ . '/includes/auto-product.php'; ?>
+    <?php include __DIR__ . '/includes/auto-product/auto-product.php'; ?>
 
-    <?php include __DIR__ . '/includes/docs.php'; ?>
-    <?php include __DIR__ . '/includes/map.php'; ?>
-    <?php include __DIR__ . '/includes/footer.php'; ?>
+    <?php include __DIR__ . '/includes/docs/docs.php'; ?>
+    <?php include __DIR__ . '/includes/map/map.php'; ?>
+    <?php include __DIR__ . '/includes/footer/footer.php'; ?>
 
     <!-- Ваши скрипты -->
     <script src="/js/script.js"></script>

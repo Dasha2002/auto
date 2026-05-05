@@ -129,7 +129,7 @@
                 <span class="price-value">798 231 ₽</span>
             </div>
             <div class="product-actions">
-                <button class="btn-action btn-action--solid" data-modal="#zakaz">
+                <button class="btn-action btn-action--solid btn-popap-three" data-modal="#zakaz">
                     <span>ПОДОБРАТЬ АВТО</span>
                 </button>
             </div>
