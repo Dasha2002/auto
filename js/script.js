@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== FUNCTIONS =====
 
   // Show step by number
-  function showStep(stepNumber) {
+  function showStep(stepNumber, isInit) {
     steps.forEach((step) => {
       step.hidden = parseInt(step.dataset.step) !== stepNumber;
     });
@@ -136,8 +136,10 @@ document.addEventListener("DOMContentLoaded", () => {
     currentStep = stepNumber;
 
     // Focus first input in step
-    const firstInput = steps[stepNumber - 1]?.querySelector('input:not([type="hidden"]), textarea');
-    firstInput?.focus();
+    if (!isInit) {
+        const firstInput = steps[stepNumber - 1]?.querySelector('input:not([type="hidden"]), textarea');
+        firstInput?.focus();
+    }
   }
 
   // Validate current step
@@ -306,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize
   initCustomRadios();
   initPhoneMask();
-  showStep(1);
+  showStep(1, true);
 });
 
 // свайпер hero
