@@ -1,0 +1,350 @@
+/* ====================================================================
+   ПОПАП ЗАКАЗА УСЛУГИ (Order Service Modal)
+   ==================================================================== */
+.order-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 40px 16px;
+}
+
+.order-modal.is-active {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.order-modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+.order-modal__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 560px;
+}
+
+.order-modal__content {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    animation: orderModalIn 0.3s ease-out;
+}
+
+@keyframes orderModalIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.order-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px 0;
+}
+
+.order-modal__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.order-modal__close {
+    width: 36px;
+    height: 36px;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 50%;
+    color: #6b7280;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.order-modal__close:hover {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.order-modal__body {
+    padding: 20px 28px 28px;
+}
+
+/* Список услуг */
+.order-modal__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.order-modal__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.order-modal__item-img {
+    width: 72px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #e5e7eb;
+}
+
+.order-modal__item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.order-modal__item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Счётчик количества */
+.order-modal__item-qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-modal__qty-btn {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 50%;
+    background: transparent;
+    color: #374151;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.order-modal__qty-btn:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+.order-modal__qty-value {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 16px;
+    text-align: center;
+}
+
+.order-modal__item-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.order-modal__item-remove {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: color 0.15s, background 0.15s;
+    flex-shrink: 0;
+}
+
+.order-modal__item-remove:hover {
+    color: #dc2626;
+    background: #fef2f2;
+}
+
+/* Сумма */
+.order-modal__subtotal {
+    text-align: right;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+    padding: 14px 0 16px;
+}
+
+.order-modal__divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 0 0 20px;
+}
+
+/* Телефон */
+.order-modal__form-group {
+    margin-bottom: 20px;
+}
+
+.order-modal__label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.order-modal__hint {
+    font-size: 13px;
+    color: #9ca3af;
+    margin: 0 0 10px;
+}
+
+.order-modal__phone-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.order-modal__phone-wrapper:focus-within {
+    border-color: #dc2626;
+}
+
+.order-modal__country-code {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 14px 12px;
+    background: #f9fafb;
+    border-right: 1.5px solid #e5e7eb;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    flex-shrink: 0;
+    cursor: default;
+}
+
+.order-modal__flag {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.order-modal__code {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.order-modal__phone-input {
+    flex: 1;
+    border: none !important;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    background: transparent;
+    color: #111827;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+}
+
+.order-modal__phone-input::placeholder {
+    color: #9ca3af;
+}
+
+/* Итог */
+.order-modal__total {
+    text-align: right;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+/* Кнопка */
+.order-modal__submit {
+    width: 100%;
+    padding: 18px;
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-bottom: 16px;
+}
+
+.order-modal__submit:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.order-modal__note {
+    font-size: 13px;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0 0 10px;
+}
+
+.order-modal__privacy {
+    font-size: 12px;
+    color: #9ca3af;
+    text-align: center;
+    margin: 0;
+}
+
+.order-modal__privacy a {
+    color: #dc2626;
+    text-decoration: underline;
+}
+
+/* Пустая корзина */
+.order-modal__empty {
+    text-align: center;
+    padding: 24px 0;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .order-modal {
+        padding: 0;
+        align-items: flex-end !important;
+    }
+
+    .order-modal__content {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .order-modal__container {
+        max-width: 100%;
+    }
+}

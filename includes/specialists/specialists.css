@@ -1,0 +1,39 @@
+/* ====================================================================
+   СЕКЦИЯ: КОМАНДА СПЕЦИАЛИСТОВ (Team)
+   Карточки специалистов, фото-заглушки, должности
+   ==================================================================== */
+.team-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  transition: box-shadow 0.3s;
+}
+.team-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.team-photo {
+  background: #d1d5db;
+  position: relative;
+  overflow: hidden;
+}
+.team-photo i {
+  color: #9ca3af;
+  font-size: 144px;
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 767px) {
+  .specialists-grid {
+    justify-items: center;
+  }
+
+  .specialist-card {
+    max-width: 450px;
+    width: 100%;
+  }
+}

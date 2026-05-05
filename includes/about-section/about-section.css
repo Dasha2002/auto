@@ -1,0 +1,26 @@
+/* ====================================================================
+   СЕКЦИЯ: О НАС (About Section)
+   ==================================================================== */
+
+/* ABOUT SECTION */
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 160px;
+
+  .about-description {
+    width: 40%;
+    text-align: center;
+
+    @media (max-width: 1024px) {
+      width: 70%;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}

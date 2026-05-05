@@ -1,0 +1,158 @@
+/* ====================================================================
+   СЕКЦИЯ: ВИДЕООТЗЫВЫ (Video Reviews)
+   Плеер-превью, кнопки play, сетка Shorts
+   ==================================================================== */
+.video-preview {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #1f2937;
+  cursor: pointer;
+}
+.video-preview .play-btn {
+  width: 64px;
+  height: 64px;
+  background: rgba(220, 38, 38, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 10;
+  transition: transform 0.3s;
+}
+.video-preview:hover .play-btn {
+  transform: scale(1.1);
+}
+.short-card {
+  aspect-ratio: 9/16;
+  background: #e5e7eb;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== КАРТОЧКИ ВИДЕО С ПРЕВЬЮ И КНОПКОЙ PLAY ===== */
+
+.video-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-card__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.25);
+    transition: background 0.2s;
+}
+
+.video-card:hover .video-card__overlay {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.video-card__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.video-card__play i {
+    width: 52px;
+    height: 52px;
+    background: rgba(220, 38, 38, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    padding-left: 4px;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.video-card:hover .video-card__play i {
+    transform: scale(1.12);
+    background: #dc2626;
+}
+
+.aspect-\[9\/16\] .video-card__play i {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+}
+
+/* Карусель */
+.carousel-track {
+  width: 100%;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  color: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
+
+/* Кнопки — меньше на мобилке */
+@media (max-width: 767px) {
+  .carousel-prev,
+  .carousel-next {
+    width: 32px !important;
+    height: 32px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Точки пагинации */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #d1d5db;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s, width 0.2s;
+}
+
+.carousel-dot.is-active {
+  background-color: #dc2626;
+  width: 24px;
+}
+
+/* Слайд — десктоп: видео слева, текст справа */
+.carousel-slide {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Мобилка: видео сверху, текст снизу */
+@media (max-width: 767px) {
+  .carousel-slide {
+    flex-direction: column;
+  }
+
+  /* Сбрасываем инлайн min-width на дочерних дивах */
+  .carousel-slide > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+  }
+}

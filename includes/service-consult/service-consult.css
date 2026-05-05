@@ -1,0 +1,30 @@
+/* ====================================================================
+   СЕКЦИЯ: КОНСУЛЬТАЦИЯ ПО УСЛУГАМ (Service Consult)
+   ==================================================================== */
+.service-consult-section {
+  height: 500px;
+  background-image: url('../../assets/order-service-consult-bg.webp');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  background-color: transparent;
+}
+.service-consult-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.service-consult-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 500px) {
+  .order-choose-button {
+    align-self: center;
+  }
+}

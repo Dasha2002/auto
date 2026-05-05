@@ -1,0 +1,31 @@
+/* ====================================================================
+   СЕКЦИЯ: ЧЕК-ЛИСТ (Checklist CTA)
+   Блок с предложением скачать чек-лист, список преимуществ
+   ==================================================================== */
+.checklist-bg {
+  background: #f9fafb;
+  border-radius: 24px;
+  padding: 48px;
+  border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+.checklist-blur {
+  position: absolute;
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(64px);
+  z-index: 0;
+}
+.checklist-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.checklist-list i {
+  color: #22c55e;
+  margin-top: 4px;
+}

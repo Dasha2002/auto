@@ -1,0 +1,26 @@
+.map-contact-card {
+    position: absolute;
+    z-index: 10;
+    width: 340px;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (min-width: 640px) {
+    .map-contact-card {
+        width: 100%;
+        max-width: 448px;
+        bottom: auto;
+        top: 50%;
+        left: auto;
+        right: 16px;
+        transform: translateY(-50%);
+    }
+}
+
+@media (min-width: 1024px) {
+    .map-contact-card {
+        right: 64px;
+    }
+}
