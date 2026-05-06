@@ -1,9 +1,9 @@
 <section class="py-16 bg-white w-full catalog">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 uppercase">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-4 uppercase">
                 Уже более 3 000 автомобилей подобрали <span class="bg-red-600 text-white px-3 py-1 rounded-lg">под ключ</span>
-            </h2>
+            </h1>
             <p class="text-gray-600 font-medium">При этом каждый клиент сэкономил от 50 000 рублей!</p>
         </div>
 
