@@ -1,0 +1,7 @@
+@import "../includes/header/header.css";
+
+@import "../includes/catalog/catalog-auto.css";
+@import "../includes/map/map.css";
+@import "../includes/footer/footer.css";
+@import "../includes/popap/popap.css";
+@import "../includes/order-service-modal/order-service-modal.css"

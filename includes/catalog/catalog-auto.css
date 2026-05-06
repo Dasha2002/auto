@@ -20,7 +20,10 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 100%);
 }
 
-.car-card {
+ .catalog {
+        padding-top: 150px !important;
+    }
+    .car-card {
         height: 280px;
         position: relative;
         border-radius: 12px;
