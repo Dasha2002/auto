@@ -20,6 +20,9 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 100%);
 }
 
+ .catalog {
+        padding-top: 150px !important;
+    }
 
     .block {
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -38,6 +41,7 @@
         overflow: hidden;
         
     }
+    
     .car-card img {
         width: 100%;
         height: 100%;
@@ -111,7 +115,4 @@
         font-weight: 700;
         text-align: center;
         display: block;
-    }
-    .btn-catalog {
-      margin-top: 40px;
     }

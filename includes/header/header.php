@@ -42,8 +42,8 @@
               <li><a href="/services" class="header-submenu__link header-submenu__link--all">Все услуги →</a></li>
             </ul>
           </li>
-          <li><a href="/selected-cars" class="header-nav__link">Подобранные автомобили</a></li>
-          <li><a href="/video-reviews" class="header-nav__link">Отзывы</a></li>
+          <li><a href="/autofit.php" class="header-nav__link">Подобранные автомобили</a></li>
+          <li><a href="/review.php" class="header-nav__link">Отзывы</a></li>
           <li><a href="/about" class="header-nav__link">О компании</a></li>
           <li><a href="/contacts" class="header-nav__link">Контакты</a></li>
           <li><a href="/news" class="header-nav__link">Новости</a></li>
@@ -138,7 +138,7 @@
           </li>
           
           <li><a href="/selected-cars" class="mobile-menu__link">Подобранные автомобили</a></li>
-          <li><a href="/video-reviews" class="mobile-menu__link">Отзывы</a></li>
+          <li><a href="review.php" class="mobile-menu__link">Отзывы</a></li>
           <li><a href="/about" class="mobile-menu__link">О компании</a></li>
           <li><a href="/news" class="mobile-menu__link">Новости</a></li>
           <!-- <li><a href="/work" class="mobile-menu__link">Вакансии</a></li> -->
