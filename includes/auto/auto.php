@@ -140,7 +140,7 @@
         </div>
 
         <div class="text-center" vid="229">
-            <a href="/catalog.php" target="_blank" class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-full font-bold transition-colors inline-flex items-center gap-2" vid="230">
+            <a href="/catalog.php" class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-full font-bold transition-colors inline-flex items-center gap-2" vid="230">
                 БОЛЬШЕ АВТОМОБИЛЕЙ <i class="fa-solid fa-angle-down" vid="231"></i>
             </a>
         </div>
