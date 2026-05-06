@@ -17,31 +17,30 @@
     <link rel="icon" type="image/svg+xml" sizes="any" href="img/36.svg">
 
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/autofit-page.css">
 </head>
 <body>
 
-    <?php include __DIR__ . '/includes/header.php'; ?>
-    <?php include __DIR__ . '/includes/popap.php'; ?>
-    <?php include __DIR__ . '/includes/popap-two.php'; ?>
-    <?php include __DIR__ . '/includes/video-modal.php'; ?>
+    <?php include __DIR__ . '/includes/header/header.php'; ?>
+    <?php include __DIR__ . '/includes/popap/popap.php'; ?>
+    <?php include __DIR__ . '/includes/popap/popap-two.php'; ?>
+    <?php include __DIR__ . '/includes/video-modal/video-modal.php'; ?>
 
-    <?php include __DIR__ . '/includes/autofit-hero.php'; ?>
-    <?php include __DIR__ . '/includes/autofit-inf.php'; ?>
-    <?php include __DIR__ . '/includes/autofit-service.php'; ?>
-    <?php include __DIR__ . '/includes/auto.php'; ?>
-    <?php include __DIR__ . '/includes/reviews.php'; ?>
-    <?php include __DIR__ . '/includes/autofit-inf-two.php'; ?>
+    <?php include __DIR__ . '/includes/autofit-hero/autofit-hero.php'; ?>
+    <?php include __DIR__ . '/includes/autofit-inf/autofit-inf.php'; ?>
+    <?php include __DIR__ . '/includes/autofit-service/autofit-service.php'; ?>
+    <?php include __DIR__ . '/includes/auto/auto.php'; ?>
+    <?php include __DIR__ . '/includes/reviews/reviews.php'; ?>
+    <?php include __DIR__ . '/includes/autofit-inf-two/autofit-inf-two.php'; ?>
 
+    <?php include __DIR__ . '/includes/customer-path/customer-path.php'; ?>
+    <?php include __DIR__ . '/includes/guarantee/guarantee.php'; ?>
 
-    <?php include __DIR__ . '/includes/customer-path.php'; ?>
-    <?php include __DIR__ . '/includes/guarantee.php'; ?>
+    <?php include __DIR__ . '/includes/specialists/specialists.php'; ?>
 
-
-    <?php include __DIR__ . '/includes/specialists.php'; ?>
-
-    <?php include __DIR__ . '/includes/docs.php'; ?>
-    <?php include __DIR__ . '/includes/map.php'; ?>
-    <?php include __DIR__ . '/includes/footer.php'; ?>
+    <?php include __DIR__ . '/includes/docs/docs.php'; ?>
+    <?php include __DIR__ . '/includes/map/map.php'; ?>
+    <?php include __DIR__ . '/includes/footer/footer.php'; ?>
 
     <!-- Ваши скрипты -->
     <script src="/js/script.js"></script>

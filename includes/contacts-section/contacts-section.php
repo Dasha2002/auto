@@ -31,19 +31,19 @@
 
                 <!-- Соцсети -->
                 <div class="contacts-socials">
-                    <a href="https://www.youtube.com/channel/UClgRMD76pNrMzXp4zT8eltQ?_gl=1*1182u9o*_ga*MTE3MzQwMjU2NS4xNjA5OTMzODc5*_ga_EEC0H5C8ZZ*MTYxMjM3Nzg0Mi4xNS4xLjE2MTIzODAxNTcuNjA." class="contacts-socials__link" aria-label="YouTube">
+                    <a href="https://www.youtube.com/channel/UClgRMD76pNrMzXp4zT8eltQ?_gl=1*1182u9o*_ga*MTE3MzQwMjU2NS4xNjA5OTMzODc5*_ga_EEC0H5C8ZZ*MTYxMjM3Nzg0Mi4xNS4xLjE2MTIzODAxNTcuNjA." class="contacts-socials__link" aria-label="YouTube" target="_blank">
                         <img src="../assets/youtube.svg"/>
                     </a>
-                    <a href="https://vk.com/avtopodbor_159?_gl=1*ii21oi*_ga*MTE3MzQwMjU2NS4xNjA5OTMzODc5*_ga_EEC0H5C8ZZ*MTYxMjM3Nzg0Mi4xNS4xLjE2MTIzODAxNTcuNjA." class="contacts-socials__link" aria-label="ВКонтакте">
+                    <a href="https://vk.com/avtopodbor_159?_gl=1*ii21oi*_ga*MTE3MzQwMjU2NS4xNjA5OTMzODc5*_ga_EEC0H5C8ZZ*MTYxMjM3Nzg0Mi4xNS4xLjE2MTIzODAxNTcuNjA." class="contacts-socials__link" aria-label="ВКонтакте" target="_blank">
                         <img src="../assets/vk.svg"/>
                     </a>
-                    <a href="https://wa.me/79125811888?text=" class="contacts-socials__link" aria-label="WhatsApp">
+                    <a href="https://wa.me/79125811888?text=" class="contacts-socials__link" aria-label="WhatsApp" target="_blank">
                         <img src="../assets/whatsapp.svg"/>
                     </a>
-                    <a href="viber://add?number=79125811888/" class="contacts-socials__link" aria-label="Viber">
+                    <a href="viber://add?number=79125811888/" class="contacts-socials__link" aria-label="Viber" target="_blank">
                         <img src="../assets/viber.svg"/>
                     </a>
-                    <a href="https://t.me/mustaione" class="contacts-socials__link" aria-label="Telegram">
+                    <a href="https://t.me/mustaione" class="contacts-socials__link" aria-label="Telegram" target="_blank">
                         <img src="../assets/telegram.svg"/>
                     </a>
                 </div>

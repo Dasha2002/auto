@@ -1,0 +1,43 @@
+/* ====================================================================
+   СЕКЦИЯ: РИСКИ / ПРЕДОСТЕРЕЖЕНИЕ (Risks Warning)
+   Блок с предупреждениями о недобросовестных продавцах
+   ==================================================================== */
+.risk-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.risk-item i {
+  color: #ef4444;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.risk-bg {
+  background: #4a4a4a;
+  color: #fff;
+  position: relative;
+  padding: 64px 0;
+}
+
+@media (max-width: 800px) {
+  .risks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .risks-layout {
+    flex-direction: column;
+  }
+
+  .risks-image {
+    width: 100% !important;
+    height: 340px !important;
+    align-self: stretch !important;
+  }
+
+  .risks-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,21 @@
+/* ====================================================================
+   СЕКЦИЯ: ПОРТФОЛИО АВТОМОБИЛЕЙ (Portfolio Grid)
+   Стили для карточек авто, наложений, цен и торга
+   ==================================================================== */
+.portfolio-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.portfolio-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+.portfolio-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 100%);
+}

@@ -1,0 +1,78 @@
+/* ====================================================================
+   СЕКЦИЯ: ВАКАНСИИ (Vacancies)
+   Аккордеон с вакансиями
+   ==================================================================== */
+
+/* ===== ACCORDION VACANCIES ===== */
+
+.vacancies-accordion {
+    border-top: 1px solid #e5e7eb;
+}
+
+.vacancy-item {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.vacancy-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+}
+
+.vacancy-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+}
+
+.vacancy-icon {
+    flex-shrink: 0;
+    color: #dc2626;
+    transition: transform 0.35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vacancy-item.is-open .vacancy-icon {
+    transform: rotate(45deg);
+}
+
+/* Плавное раскрытие через grid */
+.vacancy-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.vacancy-item.is-open .vacancy-body {
+    grid-template-rows: 1fr;
+}
+
+.vacancy-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 0;
+    transition: padding-bottom 0.35s ease;
+}
+
+.vacancy-item.is-open .vacancy-content {
+    padding-bottom: 28px;
+}
+
+.vacancy-content p {
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.6;
+    margin: 0;
+}

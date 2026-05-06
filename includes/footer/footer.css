@@ -1,0 +1,38 @@
+/* ====================================================================
+   СЕКЦИЯ: ПОДВАЛ (Footer)
+   Колонки ссылок, логотип, соцсети, копирайт
+   ==================================================================== */
+.footer {
+  background: #1a1a1a;
+  color: #9ca3af;
+  padding-top: 64px;
+  padding-bottom: 32px;
+  border-top: 4px solid #dc2626;
+  width: 100%;
+}
+footer a:hover {
+  color: #fff;
+  transition: color 0.3s;
+}
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.social-icon:hover {
+  background: #dc2626;
+  color: #fff;
+}
+
+@media (max-width: 1023px) {
+  .footer .space-y-2 {
+    padding-left: 16px;
+  }
+}

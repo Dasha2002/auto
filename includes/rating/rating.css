@@ -1,0 +1,25 @@
+/* ====================================================================
+   СЕКЦИЯ: ОТЗЫВЫ И РЕЙТИНГ (Reviews & Yandex)
+   Карточки отзывов, звезды, аватары, ссылки на Яндекс
+   ==================================================================== */
+.review-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+}
+.star-rating i {
+  color: #facc15;
+  font-size: 12px;
+}
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}

@@ -1,0 +1,100 @@
+.contacts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 160px 0;
+}
+
+.contacts-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .contacts-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* Левая колонка */
+.contacts-info__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.contacts-info__row {
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #111827;
+    text-decoration: none;
+}
+
+a.contacts-info__row .contacts-info__value {
+    color: #dc2626;
+}
+
+.contacts-info__label {
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.contacts-info__value {
+    color: #374151;
+    transition: color 0.2s;
+}
+
+/* Соцсети */
+.contacts-socials {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contacts-socials__link {
+    width: 48px;
+    height: 48px;
+    background: #dc2626;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.contacts-socials__link svg {
+    width: 22px;
+    height: 22px;
+}
+
+.contacts-socials__link:hover {
+    background: #b91c1c;
+    transform: scale(1.08);
+}
+
+/* Правая колонка: картинка */
+.contacts-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: #e5e7eb;
+    max-width: 460px;
+}
+
+.contacts-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}

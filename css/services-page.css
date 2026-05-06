@@ -1,0 +1,15 @@
+@import '../includes/header/header.css';
+@import '../includes/services-list/services-list.css';
+@import '../includes/service-consult/service-consult.css';
+@import '../includes/auto/auto.css';
+@import '../includes/reviews/reviews.css';
+@import '../includes/choose-us/choose-us.css';
+@import '../includes/customer-path/customer-path.css';
+@import '../includes/guarantee/guarantee.css';
+@import '../includes/specialists/specialists.css';
+@import '../includes/docs/docs.css';
+@import '../includes/popap/popap.css';
+@import '../includes/video-modal/video-modal.css';
+@import '../includes/order-service-modal/order-service-modal.css';
+@import '../includes/map/map.css';
+@import '../includes/footer/footer.css';

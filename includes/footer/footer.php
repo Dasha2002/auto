@@ -44,17 +44,17 @@
                 
                 <div vid="887">
                     <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider" vid="888">КОНТАКТЫ</h4>
-                    <a href="tel:88005008715" class="block text-xl font-bold text-white hover:text-red-500 transition-colors mb-1" vid="889">8 800 500 87 15</a>
+                    <a href="tel:88005008715" class="block text-xl font-bold text-white hover:text-red-500 transition-colors mb-1" vid="889" target="_blank">8 800 500 87 15</a>
                     <p class="text-xs mb-4" vid="890">Звонок по РФ бесплатный</p>
                     
                     <button class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg text-sm font-bold transition-colors mb-6 open-callback-modal" vid="891">ЗАКАЗАТЬ ЗВОНОК</button></div><div class="flex gap-4 mt-6" vid="892">
-                        <a href="https://variant.com/design/08db0d31-4d80-4c1e-a535-68826d3a4538.html?t=1777400494229#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors" vid="893">
+                        <a href="https://vk.com/avtopodbor_159?_gl=1*ii21oi*_ga*MTE3MzQwMjU2NS4xNjA5OTMzODc5*_ga_EEC0H5C8ZZ*MTYxMjM3Nzg0Mi4xNS4xLjE2MTIzODAxNTcuNjA." class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors" vid="893" target="_blank">
                             <i class="fa-brands fa-vk" vid="894"></i>
                         </a>
-                        <a href="https://variant.com/design/08db0d31-4d80-4c1e-a535-68826d3a4538.html?t=1777400494229#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors" vid="895">
+                        <a href="https://t.me/mustaione" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors" vid="895" target="_blank">
                             <i class="fa-brands fa-telegram" vid="896"></i>
                         </a>
-                        <a href="https://variant.com/design/08db0d31-4d80-4c1e-a535-68826d3a4538.html?t=1777400494229#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors" vid="897">
+                        <a href="https://www.youtube.com/channel/UClgRMD76pNrMzXp4zT8eltQ?_gl=1*1182u9o*_ga*MTE3MzQwMjU2NS4xNjA5OTMzODc5*_ga_EEC0H5C8ZZ*MTYxMjM3Nzg0Mi4xNS4xLjE2MTIzODAxNTcuNjA." class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors" vid="897" target="_blank">
                             <i class="fa-brands fa-youtube" vid="898"></i>
                         </a>
                     </div>
