@@ -643,6 +643,7 @@
   }
 }
 
+
 /* ==================== ACCESSIBILITY ==================== */
 .btn:focus-visible,
 .header-nav__link:focus-visible,
@@ -651,3 +652,20 @@
 .mobile-social__link:focus-visible {
   outline-offset: 4px;
 }
+
+.max-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.max-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
