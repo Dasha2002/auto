@@ -20,17 +20,23 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 100%);
 }
 
-.car-card {
+
+    .block {
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s;
+        border-radius: 12px;
+        padding: 10px;
+    }
+    .block:hover {
+      transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    .car-card {
         height: 280px;
         position: relative;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: all 0.3s;
-    }
-    .car-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        
     }
     .car-card img {
         width: 100%;
@@ -73,4 +79,39 @@
         font-weight: 800;
         text-align: center;
         text-transform: uppercase;
+    }
+    .car-details {
+        padding: 12px 0;
+    }
+    .car-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #1f2937;
+    }
+    .car-specs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #4b5563;
+    }
+    .car-specs-label {
+        font-weight: 500;
+    }
+    .car-specs-value {
+        font-weight: 600;
+    }
+    .car-save-btn {
+        background: #22c55e;
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+        display: block;
+    }
+    .btn-catalog {
+      margin-top: 40px;
     }
