@@ -34,7 +34,7 @@
                     <div class="lg:w-1/2" vid="531">
                         <h2 class="text-2xl md:text-3xl font-extrabold mb-4 uppercase tracking-tight" vid="532">
                             ПОЛУЧИТЕ <span class="bg-red-600 text-white px-3 py-1 rounded-lg" vid="533">ЧЕК-ЛИСТ</span>
-                            <span class="block text-lg font-medium text-gray-600 mt-2 lowercase" vid="534">"Как выбрать надежный автомобиль в 2024 году, чтобы не попасть на дорогостоящий ремонт"</span>
+                            <span class="block text-lg font-medium text-gray-600 mt-2 lowercase" vid="534">"Как выбрать надежный автомобиль в 2026 году, чтобы не попасть на дорогостоящий ремонт"</span>
                         </h2>
                         
                         <p class="text-gray-600 mb-8 italic border-l-4 border-red-500 pl-4" vid="535">
